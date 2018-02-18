@@ -6,6 +6,26 @@ use hexe::engine::Engine;
 use hexe::prelude::*;
 
 #[no_mangle]
+pub unsafe extern "C" fn hexe_square_distance(s1: u8, s2: u8) -> usize {
+    Square::distance(mem::transmute(s1), mem::transmute(s2))
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn hexe_square_man_distance(s1: u8, s2: u8) -> usize {
+    Square::man_distance(mem::transmute(s1), mem::transmute(s2))
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn hexe_square_center_distance(square: u8) -> usize {
+    Square::center_distance(mem::transmute(square))
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn hexe_square_center_man_distance(square: u8) -> usize {
+    Square::center_man_distance(mem::transmute(square))
+}
+
+#[no_mangle]
 pub unsafe extern "C" fn hexe_pawn_attacks(square: u8, color: u8) -> u64 {
     Square::pawn_attacks(mem::transmute(square), mem::transmute(color)).0
 }

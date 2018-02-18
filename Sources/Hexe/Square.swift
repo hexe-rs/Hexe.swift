@@ -204,6 +204,26 @@ public enum Square: UInt8 {
 }
 
 extension Square {
+    /// Returns the Chebyshev distance between `self` and `other`.
+    public func distance(to other: Square) -> Int {
+        return hexe_square_distance(self.rawValue, other.rawValue)
+    }
+
+    /// Returns the Manhattan distance between `self` and `other`.
+    public func manDistance(to other: Square) -> Int {
+        return hexe_square_man_distance(self.rawValue, other.rawValue)
+    }
+
+    /// Returns the Chebyshev distance between `self` and the center of the board.
+    public func centerDistance() -> Int {
+        return hexe_square_center_distance(self.rawValue)
+    }
+
+    /// Returns the Manhattan distance between `self` and the center of the board.
+    public func centerManDistance() -> Int {
+        return hexe_square_center_man_distance(self.rawValue)
+    }
+
     /// Returns the pawn attacks at `self` for `color`.
     public func pawnAttacks(color: Color) -> Bitboard {
         return hexe_pawn_attacks(self.rawValue, color.rawValue)
