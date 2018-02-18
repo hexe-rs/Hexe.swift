@@ -27,6 +27,7 @@
 		525540EC2039446E007D4ABD /* Hexe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hexe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525540F920396095007D4ABD /* libhexec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhexec.a; path = "target/x86_64-apple-darwin/release/libhexec.a"; sourceTree = "<group>"; };
 		525540FB203964A7007D4ABD /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		5255410020396D98007D4ABD /* Hexe.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Hexe.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 				525540D920393A39007D4ABD /* Support */,
 				525540CE20393973007D4ABD /* Products */,
 				525540DD20393DC6007D4ABD /* Frameworks */,
+				5255410020396D98007D4ABD /* Hexe.playground */,
 			);
 			sourceTree = "<group>";
 		};
