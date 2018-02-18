@@ -11,6 +11,8 @@
 		525540F4203944D7007D4ABD /* Hexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Hexe.swift */; };
 		525540F520394548007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540E5203940EB007D4ABD /* libhexec.a */; };
 		525540FA20396096007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540F920396095007D4ABD /* libhexec.a */; };
+		525540FC203964A7007D4ABD /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540FB203964A7007D4ABD /* Square.swift */; };
+		525540FD203964A7007D4ABD /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540FB203964A7007D4ABD /* Square.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		525540E5203940EB007D4ABD /* libhexec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhexec.a; path = target/universal/release/libhexec.a; sourceTree = "<group>"; };
 		525540EC2039446E007D4ABD /* Hexe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hexe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525540F920396095007D4ABD /* libhexec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhexec.a; path = "target/x86_64-apple-darwin/release/libhexec.a"; sourceTree = "<group>"; };
+		525540FB203964A7007D4ABD /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				525540D7203939D3007D4ABD /* Hexe.swift */,
+				525540FB203964A7007D4ABD /* Square.swift */,
 			);
 			path = Hexe;
 			sourceTree = "<group>";
@@ -267,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525540FC203964A7007D4ABD /* Square.swift in Sources */,
 				525540D8203939D3007D4ABD /* Hexe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525540FD203964A7007D4ABD /* Square.swift in Sources */,
 				525540F4203944D7007D4ABD /* Hexe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
