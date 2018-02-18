@@ -28,6 +28,8 @@
 		525540F920396095007D4ABD /* libhexec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhexec.a; path = "target/x86_64-apple-darwin/release/libhexec.a"; sourceTree = "<group>"; };
 		525540FB203964A7007D4ABD /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		5255410020396D98007D4ABD /* Hexe.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Hexe.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		52554103203970A2007D4ABD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		5255410520397660007D4ABD /* hexec.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hexec.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				525540CE20393973007D4ABD /* Products */,
 				525540DD20393DC6007D4ABD /* Frameworks */,
 				5255410020396D98007D4ABD /* Hexe.playground */,
+				52554103203970A2007D4ABD /* Package.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +114,7 @@
 			children = (
 				525540E120393EA9007D4ABD /* include */,
 				525540E420393EA9007D4ABD /* lib.rs */,
+				5255410520397660007D4ABD /* hexec.c */,
 			);
 			path = hexec;
 			sourceTree = "<group>";
@@ -198,6 +202,7 @@
 					};
 					525540EB2039446E007D4ABD = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
