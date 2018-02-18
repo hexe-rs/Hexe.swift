@@ -237,31 +237,31 @@ extension Square {
 
     /// Returns the pawn attacks at `self` for `color`.
     public func pawnAttacks(color: Color) -> Bitboard {
-        return hexe_pawn_attacks(self.rawValue, color.rawValue)
+        return Bitboard(hexe_pawn_attacks(self.rawValue, color.rawValue))
     }
 
     /// Returns all knight attacks at `self`.
     public func knightAttacks() -> Bitboard {
-        return hexe_knight_attacks(self.rawValue)
+        return Bitboard(hexe_knight_attacks(self.rawValue))
     }
 
     /// Returns all king attacks at `self`.
     public func kingAttacks() -> Bitboard {
-        return hexe_king_attacks(self.rawValue)
+        return Bitboard(hexe_king_attacks(self.rawValue))
     }
 
     /// Returns all rook attacks at `self`.
     public func rookAttacks(_ occupied: Bitboard) -> Bitboard {
-        return hexe_rook_attacks(self.rawValue, occupied)
+        return Bitboard(hexe_rook_attacks(self.rawValue, occupied.rawValue))
     }
 
     /// Returns all bishop attacks at `self`.
     public func bishopAttacks(_ occupied: Bitboard) -> Bitboard {
-        return hexe_bishop_attacks(self.rawValue, occupied)
+        return Bitboard(hexe_bishop_attacks(self.rawValue, occupied.rawValue))
     }
 
     /// Returns all queen attacks at `self`.
     public func queenAttacks(_ occupied: Bitboard) -> Bitboard {
-        return hexe_queen_attacks(self.rawValue, occupied)
+        return Bitboard(hexe_queen_attacks(self.rawValue, occupied.rawValue))
     }
 }

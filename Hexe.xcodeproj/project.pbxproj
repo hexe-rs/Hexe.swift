@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5207BD5F203A0BA800A73588 /* Bitboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207BD5E203A0BA800A73588 /* Bitboard.swift */; };
+		5207BD60203A0BA800A73588 /* Bitboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207BD5E203A0BA800A73588 /* Bitboard.swift */; };
 		525540D8203939D3007D4ABD /* Hexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Hexe.swift */; };
 		525540F4203944D7007D4ABD /* Hexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Hexe.swift */; };
 		525540F520394548007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540E5203940EB007D4ABD /* libhexec.a */; };
@@ -18,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5207BD5E203A0BA800A73588 /* Bitboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitboard.swift; sourceTree = "<group>"; };
 		525540CD20393973007D4ABD /* Hexe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hexe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525540D7203939D3007D4ABD /* Hexe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexe.swift; sourceTree = "<group>"; };
 		525540DA20393A39007D4ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 				525540D7203939D3007D4ABD /* Hexe.swift */,
 				525540FB203964A7007D4ABD /* Square.swift */,
 				5255410D2039FBB2007D4ABD /* Color.swift */,
+				5207BD5E203A0BA800A73588 /* Bitboard.swift */,
 			);
 			path = Hexe;
 			sourceTree = "<group>";
@@ -278,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5207BD5F203A0BA800A73588 /* Bitboard.swift in Sources */,
 				525540FC203964A7007D4ABD /* Square.swift in Sources */,
 				525540D8203939D3007D4ABD /* Hexe.swift in Sources */,
 				5255410E2039FBB2007D4ABD /* Color.swift in Sources */,
@@ -288,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5207BD60203A0BA800A73588 /* Bitboard.swift in Sources */,
 				525540FD203964A7007D4ABD /* Square.swift in Sources */,
 				525540F4203944D7007D4ABD /* Hexe.swift in Sources */,
 				5255410F2039FBB2007D4ABD /* Color.swift in Sources */,
