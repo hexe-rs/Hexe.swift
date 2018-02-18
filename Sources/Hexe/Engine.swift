@@ -1,5 +1,5 @@
 //
-//  Hexe.swift
+//  Engine.swift
 //  Hexe
 //
 //  Created by Nikolai Vazquez on 2/17/18.
@@ -9,15 +9,13 @@
 import hexec
 
 public final class Engine {
-    typealias Ptr = OpaquePointer
-
-    let ptr: Ptr
+    let ptr: engine_ptr
 
     public init() {
-        ptr = Ptr(hexe_engine_new())
+        ptr = hexe_engine_new()
     }
 
     deinit {
-        hexe_engine_destroy(UnsafeMutableRawPointer(ptr))
+        hexe_engine_destroy(ptr)
     }
 }
