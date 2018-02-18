@@ -10,22 +10,20 @@
 		525540D8203939D3007D4ABD /* Hexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Hexe.swift */; };
 		525540F4203944D7007D4ABD /* Hexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Hexe.swift */; };
 		525540F520394548007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540E5203940EB007D4ABD /* libhexec.a */; };
-		525540FA20396096007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540F920396095007D4ABD /* libhexec.a */; };
 		525540FC203964A7007D4ABD /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540FB203964A7007D4ABD /* Square.swift */; };
 		525540FD203964A7007D4ABD /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540FB203964A7007D4ABD /* Square.swift */; };
+		5255410C2039F303007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540E5203940EB007D4ABD /* libhexec.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		525540CD20393973007D4ABD /* Hexe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hexe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525540D7203939D3007D4ABD /* Hexe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexe.swift; sourceTree = "<group>"; };
 		525540DA20393A39007D4ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		525540DE20393DC6007D4ABD /* libhexec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhexec.a; path = target/release/libhexec.a; sourceTree = "<group>"; };
 		525540E220393EA9007D4ABD /* hexec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hexec.h; sourceTree = "<group>"; };
 		525540E320393EA9007D4ABD /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		525540E420393EA9007D4ABD /* lib.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lib.rs; sourceTree = "<group>"; };
 		525540E5203940EB007D4ABD /* libhexec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhexec.a; path = target/universal/release/libhexec.a; sourceTree = "<group>"; };
 		525540EC2039446E007D4ABD /* Hexe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hexe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		525540F920396095007D4ABD /* libhexec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhexec.a; path = "target/x86_64-apple-darwin/release/libhexec.a"; sourceTree = "<group>"; };
 		525540FB203964A7007D4ABD /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		5255410020396D98007D4ABD /* Hexe.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Hexe.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		52554103203970A2007D4ABD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -37,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				525540FA20396096007D4ABD /* libhexec.a in Frameworks */,
+				5255410C2039F303007D4ABD /* libhexec.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +100,7 @@
 		525540DD20393DC6007D4ABD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				525540F920396095007D4ABD /* libhexec.a */,
 				525540E5203940EB007D4ABD /* libhexec.a */,
-				525540DE20393DC6007D4ABD /* libhexec.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -372,7 +368,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/target/x86_64-apple-darwin/release",
+					"$(PROJECT_DIR)/target/universal/release",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -443,7 +439,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/target/x86_64-apple-darwin/release",
+					"$(PROJECT_DIR)/target/universal/release",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
