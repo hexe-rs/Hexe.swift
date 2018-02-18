@@ -1,5 +1,5 @@
 
-# Created by https://www.gitignore.io/api/swift,xcode,macos,rust
+# Created by https://www.gitignore.io/api/swift,xcode,macos,visualstudiocode,rust
 
 ### macOS ###
 *.DS_Store
@@ -98,6 +98,14 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
 ### Xcode ###
 # Xcode
 #
@@ -117,4 +125,4 @@ fastlane/test_output
 /*.gcno
 
 
-# End of https://www.gitignore.io/api/swift,xcode,macos,rust
+# End of https://www.gitignore.io/api/swift,xcode,macos,visualstudiocode,rust
