@@ -23,3 +23,11 @@ extension Bitboard: ExpressibleByIntegerLiteral {
         self.init(value)
     }
 }
+
+extension Bitboard: CustomStringConvertible {
+    public var description: String {
+        let val = String(rawValue, radix: 16, uppercase: true)
+        let rem = 16.unsafeSubtracting(val.count)
+        return "0x" + String(repeating: "0" as Character, count: rem) + val
+    }
+}
