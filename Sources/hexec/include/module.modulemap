@@ -1,0 +1,4 @@
+module hexec {
+    header "hexec.h"
+    export *
+}

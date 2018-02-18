@@ -1,0 +1,15 @@
+[package]
+name = "hexec"
+version = "0.0.0"
+authors = ["Nikolai Vazquez"]
+description = "A C API for Hexe, intended for interfacing with Swift"
+
+[lib]
+path = "Sources/hexec/lib.rs"
+crate-type = ["staticlib"]
+
+[dependencies]
+hexe = "0.0.1"
+
+[profile.release]
+lto = true
