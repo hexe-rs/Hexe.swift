@@ -12,4 +12,16 @@ public enum Color: UInt8 {
     case white
     /// Black chess color.
     case black
+
+    /// Creates a color from the case-insensitive scalar.
+    public init?(scalar: UnicodeScalar) {
+        switch scalar.value | 32 {
+        case ("w" as UnicodeScalar).value:
+            self = .white
+        case ("b" as UnicodeScalar).value:
+            self = .black
+        default:
+            return nil
+        }
+    }
 }
