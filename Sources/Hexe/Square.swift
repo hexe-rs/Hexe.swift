@@ -204,6 +204,11 @@ public enum Square: UInt8 {
 }
 
 extension Square {
+    /// Returns the pawn attacks at `self` for `color`.
+    public func pawnAttacks(color: Color) -> Bitboard {
+        return hexe_pawn_attacks(self.rawValue, color.rawValue)
+    }
+
     /// Returns all knight attacks at `self`.
     public func knightAttacks() -> Bitboard {
         return hexe_knight_attacks(self.rawValue)

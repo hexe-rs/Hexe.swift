@@ -6,6 +6,11 @@ use hexe::engine::Engine;
 use hexe::prelude::*;
 
 #[no_mangle]
+pub unsafe extern "C" fn hexe_pawn_attacks(square: u8, color: u8) -> u64 {
+    Square::pawn_attacks(mem::transmute(square), mem::transmute(color)).0
+}
+
+#[no_mangle]
 pub unsafe extern "C" fn hexe_knight_attacks(square: u8) -> u64 {
     Square::knight_attacks(mem::transmute(square)).0
 }

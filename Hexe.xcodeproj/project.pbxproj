@@ -13,6 +13,8 @@
 		525540FC203964A7007D4ABD /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540FB203964A7007D4ABD /* Square.swift */; };
 		525540FD203964A7007D4ABD /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540FB203964A7007D4ABD /* Square.swift */; };
 		5255410C2039F303007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540E5203940EB007D4ABD /* libhexec.a */; };
+		5255410E2039FBB2007D4ABD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255410D2039FBB2007D4ABD /* Color.swift */; };
+		5255410F2039FBB2007D4ABD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255410D2039FBB2007D4ABD /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,7 @@
 		5255410020396D98007D4ABD /* Hexe.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Hexe.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		52554103203970A2007D4ABD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		5255410520397660007D4ABD /* hexec.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hexec.c; sourceTree = "<group>"; };
+		5255410D2039FBB2007D4ABD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,7 @@
 			children = (
 				525540D7203939D3007D4ABD /* Hexe.swift */,
 				525540FB203964A7007D4ABD /* Square.swift */,
+				5255410D2039FBB2007D4ABD /* Color.swift */,
 			);
 			path = Hexe;
 			sourceTree = "<group>";
@@ -276,6 +280,7 @@
 			files = (
 				525540FC203964A7007D4ABD /* Square.swift in Sources */,
 				525540D8203939D3007D4ABD /* Hexe.swift in Sources */,
+				5255410E2039FBB2007D4ABD /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +290,7 @@
 			files = (
 				525540FD203964A7007D4ABD /* Square.swift in Sources */,
 				525540F4203944D7007D4ABD /* Hexe.swift in Sources */,
+				5255410F2039FBB2007D4ABD /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
