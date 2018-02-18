@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		525540D8203939D3007D4ABD /* Hexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Hexe.swift */; };
-		525540E6203940EB007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540E5203940EB007D4ABD /* libhexec.a */; };
 		525540F4203944D7007D4ABD /* Hexe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Hexe.swift */; };
 		525540F520394548007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540E5203940EB007D4ABD /* libhexec.a */; };
+		525540FA20396096007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540F920396095007D4ABD /* libhexec.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +23,7 @@
 		525540E420393EA9007D4ABD /* lib.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lib.rs; sourceTree = "<group>"; };
 		525540E5203940EB007D4ABD /* libhexec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhexec.a; path = target/universal/release/libhexec.a; sourceTree = "<group>"; };
 		525540EC2039446E007D4ABD /* Hexe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hexe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		525540F920396095007D4ABD /* libhexec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhexec.a; path = "target/x86_64-apple-darwin/release/libhexec.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				525540E6203940EB007D4ABD /* libhexec.a in Frameworks */,
+				525540FA20396096007D4ABD /* libhexec.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +93,7 @@
 		525540DD20393DC6007D4ABD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				525540F920396095007D4ABD /* libhexec.a */,
 				525540E5203940EB007D4ABD /* libhexec.a */,
 				525540DE20393DC6007D4ABD /* libhexec.a */,
 			);
@@ -140,6 +142,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 525540D520393973007D4ABD /* Build configuration list for PBXNativeTarget "Hexe macOS" */;
 			buildPhases = (
+				525540F6203950C3007D4ABD /* Compile "hexec" With Cargo */,
 				525540C820393973007D4ABD /* Sources */,
 				525540C920393973007D4ABD /* Frameworks */,
 				525540CA20393973007D4ABD /* Headers */,
@@ -158,6 +161,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 525540F12039446E007D4ABD /* Build configuration list for PBXNativeTarget "Hexe iOS" */;
 			buildPhases = (
+				525540F720395CEA007D4ABD /* Compile "hexec" With Cargo */,
 				525540E72039446E007D4ABD /* Sources */,
 				525540E82039446E007D4ABD /* Frameworks */,
 				525540E92039446E007D4ABD /* Headers */,
@@ -226,6 +230,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		525540F6203950C3007D4ABD /* Compile "hexec" With Cargo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile \"hexec\" With Cargo";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "Scripts/build.sh\n";
+		};
+		525540F720395CEA007D4ABD /* Compile "hexec" With Cargo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile \"hexec\" With Cargo";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "Scripts/build.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		525540C820393973007D4ABD /* Sources */ = {
@@ -324,8 +359,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/target/release",
-					"$(PROJECT_DIR)/target/universal/release",
+					"$(PROJECT_DIR)/target/x86_64-apple-darwin/release",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -396,8 +430,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/target/release",
-					"$(PROJECT_DIR)/target/universal/release",
+					"$(PROJECT_DIR)/target/x86_64-apple-darwin/release",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
