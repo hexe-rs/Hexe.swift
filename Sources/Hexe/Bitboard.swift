@@ -6,7 +6,7 @@
 //  Copyright © 2018 Nikolai Vazquez. All rights reserved.
 //
 
-public struct Bitboard: RawRepresentable {
+public struct Bitboard: RawRepresentable, Equatable {
     public var rawValue: UInt64
 
     public init(rawValue: UInt64) {
