@@ -17,6 +17,8 @@
 		5255410C2039F303007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540E5203940EB007D4ABD /* libhexec.a */; };
 		5255410E2039FBB2007D4ABD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255410D2039FBB2007D4ABD /* Color.swift */; };
 		5255410F2039FBB2007D4ABD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255410D2039FBB2007D4ABD /* Color.swift */; };
+		52FB3035203A1FC200ACF7A4 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FB3034203A1FC200ACF7A4 /* Piece.swift */; };
+		52FB3036203A1FC200ACF7A4 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FB3034203A1FC200ACF7A4 /* Piece.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,7 @@
 		52554103203970A2007D4ABD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		5255410520397660007D4ABD /* hexec.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hexec.c; sourceTree = "<group>"; };
 		5255410D2039FBB2007D4ABD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		52FB3034203A1FC200ACF7A4 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 				525540FB203964A7007D4ABD /* Square.swift */,
 				5255410D2039FBB2007D4ABD /* Color.swift */,
 				5207BD5E203A0BA800A73588 /* Bitboard.swift */,
+				52FB3034203A1FC200ACF7A4 /* Piece.swift */,
 			);
 			path = Hexe;
 			sourceTree = "<group>";
@@ -285,6 +289,7 @@
 				5207BD5F203A0BA800A73588 /* Bitboard.swift in Sources */,
 				525540FC203964A7007D4ABD /* Square.swift in Sources */,
 				525540D8203939D3007D4ABD /* Engine.swift in Sources */,
+				52FB3035203A1FC200ACF7A4 /* Piece.swift in Sources */,
 				5255410E2039FBB2007D4ABD /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +301,7 @@
 				5207BD60203A0BA800A73588 /* Bitboard.swift in Sources */,
 				525540FD203964A7007D4ABD /* Square.swift in Sources */,
 				525540F4203944D7007D4ABD /* Engine.swift in Sources */,
+				52FB3036203A1FC200ACF7A4 /* Piece.swift in Sources */,
 				5255410F2039FBB2007D4ABD /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
