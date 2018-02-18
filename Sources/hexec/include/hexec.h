@@ -1,4 +1,4 @@
-#define ENGINE_PTR void* _Nonnull
+typedef void* _Nonnull EnginePtr;
 
-ENGINE_PTR hexe_engine_new();
-void hexe_engine_destroy(ENGINE_PTR ptr);
+EnginePtr hexe_engine_new();
+void hexe_engine_destroy(EnginePtr ptr);

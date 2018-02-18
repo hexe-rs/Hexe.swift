@@ -9,10 +9,12 @@
 import hexec
 
 public final class Engine {
-    let ptr: OpaquePointer
+    typealias Ptr = OpaquePointer
+
+    let ptr: Ptr
 
     public init() {
-        ptr = OpaquePointer(hexe_engine_new())
+        ptr = Ptr(hexe_engine_new())
     }
 
     deinit {
