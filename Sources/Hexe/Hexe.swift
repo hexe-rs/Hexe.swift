@@ -8,6 +8,14 @@
 
 import hexec
 
-func swiftTestFn() {
-    hexec.hexe_test_fn()
+public final class Engine {
+    let ptr: OpaquePointer
+
+    public init() {
+        ptr = OpaquePointer(hexe_engine_new())
+    }
+
+    deinit {
+        hexe_engine_destroy(UnsafeMutableRawPointer(ptr))
+    }
 }
