@@ -1,4 +1,5 @@
 module hexec {
     header "hexec.h"
+    link "hexec"
     export *
 }
