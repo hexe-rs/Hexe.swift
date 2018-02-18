@@ -203,7 +203,18 @@ public enum Square: UInt8 {
     case h8
 }
 
+let fileBits: UInt8 = 7
+let rankBits: UInt8 = fileBits << rankShift
+let rankShift: UInt = 3
+
 extension Square {
+    /// Combines the file of `self` with the rank of `other`.
+    public func combine(with other: Square) -> Square {
+        let file = fileBits & self.rawValue
+        let rank = rankBits & other.rawValue
+        return unsafeBitCast(file | rank, to: Square.self)
+    }
+
     /// Returns the Chebyshev distance between `self` and `other`.
     public func distance(to other: Square) -> UInt {
         return UInt(bitPattern: hexe_square_distance(self.rawValue, other.rawValue))
