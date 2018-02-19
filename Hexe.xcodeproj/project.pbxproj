@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5207BD5F203A0BA800A73588 /* Bitboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207BD5E203A0BA800A73588 /* Bitboard.swift */; };
 		5207BD60203A0BA800A73588 /* Bitboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207BD5E203A0BA800A73588 /* Bitboard.swift */; };
+		52312F18203A891300E8D931 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52312F17203A891300E8D931 /* Map.swift */; };
+		52312F19203A891300E8D931 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52312F17203A891300E8D931 /* Map.swift */; };
 		525540D8203939D3007D4ABD /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Engine.swift */; };
 		525540F4203944D7007D4ABD /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Engine.swift */; };
 		525540F520394548007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540E5203940EB007D4ABD /* libhexec.a */; };
@@ -23,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		5207BD5E203A0BA800A73588 /* Bitboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitboard.swift; sourceTree = "<group>"; };
+		52312F17203A891300E8D931 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		525540CD20393973007D4ABD /* Hexe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hexe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525540D7203939D3007D4ABD /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		525540DA20393A39007D4ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52312F16203A88FE00E8D931 /* Piece */ = {
+			isa = PBXGroup;
+			children = (
+				52FB3034203A1FC200ACF7A4 /* Piece.swift */,
+				52312F17203A891300E8D931 /* Map.swift */,
+			);
+			path = Piece;
+			sourceTree = "<group>";
+		};
 		525540A020392A97007D4ABD = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +116,7 @@
 				525540FB203964A7007D4ABD /* Square.swift */,
 				5255410D2039FBB2007D4ABD /* Color.swift */,
 				5207BD5E203A0BA800A73588 /* Bitboard.swift */,
-				52FB3034203A1FC200ACF7A4 /* Piece.swift */,
+				52312F16203A88FE00E8D931 /* Piece */,
 			);
 			path = Hexe;
 			sourceTree = "<group>";
@@ -290,6 +302,7 @@
 				525540FC203964A7007D4ABD /* Square.swift in Sources */,
 				525540D8203939D3007D4ABD /* Engine.swift in Sources */,
 				52FB3035203A1FC200ACF7A4 /* Piece.swift in Sources */,
+				52312F18203A891300E8D931 /* Map.swift in Sources */,
 				5255410E2039FBB2007D4ABD /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +315,7 @@
 				525540FD203964A7007D4ABD /* Square.swift in Sources */,
 				525540F4203944D7007D4ABD /* Engine.swift in Sources */,
 				52FB3036203A1FC200ACF7A4 /* Piece.swift in Sources */,
+				52312F19203A891300E8D931 /* Map.swift in Sources */,
 				5255410F2039FBB2007D4ABD /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
