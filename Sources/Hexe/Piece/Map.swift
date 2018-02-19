@@ -7,10 +7,25 @@
 //
 
 import hexec
+import simd
 
-private func memEq<T>(_ lhs: UnsafePointer<T>, _ rhs: UnsafePointer<T>) -> Bool {
-    return Int(bitPattern: lhs) == Int(bitPattern: rhs)
-        || memcmp(lhs, rhs, MemoryLayout<T>.size) == 0
+typealias Simd = simd_uint4
+
+private func memEq(_ lhs: UnsafePointer<piece_map>, _ rhs: UnsafePointer<piece_map>) -> Bool {
+    if Int(bitPattern: lhs) == Int(bitPattern: rhs) {
+        return true
+    }
+    let len = MemoryLayout<piece_map>.size / MemoryLayout<Simd>.size
+    return lhs.withMemoryRebound(to: Simd.self, capacity: len) { a in
+        rhs.withMemoryRebound(to: Simd.self, capacity: len) { b in
+            for i in 0 ..< len {
+                if a[i] != b[i] {
+                    return false
+                }
+            }
+            return true
+        }
+    }
 }
 
 /// A mapping of sixty-four squares to pieces.
