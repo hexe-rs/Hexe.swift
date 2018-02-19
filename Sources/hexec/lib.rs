@@ -1,7 +1,9 @@
 extern crate hexe;
 
 use std::mem;
+use std::os::raw;
 
+use hexe::core::piece::map::PieceMap;
 use hexe::engine::Engine;
 use hexe::prelude::*;
 
@@ -63,4 +65,20 @@ pub extern "C" fn hexe_engine_new() -> Box<Engine> {
 #[no_mangle]
 pub unsafe extern "C" fn hexe_engine_destroy(e: Box<Engine>) {
     drop(e);
+}
+
+type StringFn = extern "C" fn(*mut raw::c_char, *mut u8);
+
+#[no_mangle]
+pub unsafe extern "C" fn hexe_piece_map_fen(ctx: *mut u8, map: &mut PieceMap, f: StringFn) {
+    const NUM: usize = 8;
+    const MAX: usize = NUM * NUM + 7;
+
+    let mut buf = [0u8; MAX + 1];
+    map.map_fen(|s| {
+        let len = s.len();
+        let buf = buf.get_unchecked_mut(..len);
+        buf.copy_from_slice(s.as_bytes());
+    });
+    f(&mut buf as *mut _ as *mut _, ctx);
 }

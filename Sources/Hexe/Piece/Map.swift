@@ -37,6 +37,19 @@ public final class PieceMap: Equatable {
 
     private var inner: piece_map
 
+    /// Creates the fen string for `self`.
+    public var fen: String {
+        var s: String = ""
+        return withUnsafeMutablePointer(to: &s) {
+            let ptr: UnsafeMutablePointer<String> = $0
+            hexe_piece_map_fen(ptr, &self.inner) {
+                let p = $1.assumingMemoryBound(to: String.self)
+                p.pointee = String(cString: $0)
+            }
+            return s
+        }
+    }
+
     /// Creates a new instance.
     public init() {
         self.inner = hexe_piece_map_new()

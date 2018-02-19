@@ -10,6 +10,10 @@ typedef uint64_t bitboard;
 
 typedef void* _Nonnull engine_ptr;
 
+typedef void* _Nonnull context;
+
+typedef void (*StringFn)(char* _Nonnull, context);
+
 typedef struct {
     uint8_t bytes[NUM_SQUARES];
 } piece_map;
@@ -20,6 +24,8 @@ piece_map hexe_piece_map_new() {
     };
     return map;
 }
+
+void hexe_piece_map_fen(context, piece_map* _Nonnull, StringFn _Nonnull);
 
 size_t hexe_square_distance(uint8_t s1, uint8_t s2);
 size_t hexe_square_man_distance(uint8_t s1, uint8_t s2);
