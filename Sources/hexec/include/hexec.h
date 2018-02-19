@@ -16,7 +16,7 @@ typedef struct {
 
 piece_map hexe_piece_map_new() {
     piece_map map = {
-        .bytes = { [0 ... NUM_SQUARES - 1] = 13 }
+        .bytes = { [0 ... NUM_SQUARES - 1] = 12 }
     };
     return map;
 }
