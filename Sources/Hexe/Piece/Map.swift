@@ -8,7 +8,7 @@
 
 import hexec
 
-func memEq<T>(_ lhs: UnsafePointer<T>, _ rhs: UnsafePointer<T>) -> Bool {
+private func memEq<T>(_ lhs: UnsafePointer<T>, _ rhs: UnsafePointer<T>) -> Bool {
     return Int(bitPattern: lhs) == Int(bitPattern: rhs)
         || memcmp(lhs, rhs, MemoryLayout<T>.size) == 0
 }
