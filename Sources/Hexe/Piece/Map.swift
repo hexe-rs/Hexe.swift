@@ -28,6 +28,10 @@ private func memEq(_ lhs: UnsafePointer<piece_map>, _ rhs: UnsafePointer<piece_m
     }
 }
 
+private func pointer(in map: UnsafeMutableRawPointer, to sq: Square) -> UnsafeMutableRawPointer {
+    return map + Int(sq.rawValue)
+}
+
 /// A mapping of sixty-four squares to pieces.
 public final class PieceMap: Equatable {
     /// Returns whether the piece maps are equal.
@@ -75,8 +79,4 @@ public final class PieceMap: Equatable {
             }
         }
     }
-}
-
-private func pointer(in map: UnsafeMutableRawPointer, to sq: Square) -> UnsafeMutableRawPointer {
-    return map + Int(sq.rawValue)
 }
