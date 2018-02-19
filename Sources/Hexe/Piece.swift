@@ -69,7 +69,12 @@ extension Piece {
 
     /// This piece's color.
     public var color: Color {
-        return unsafeBitCast(self.rawValue & 1, to: Color.self)
+        get {
+            return unsafeBitCast(self.rawValue & 1, to: Color.self)
+        }
+        set {
+            self = unsafeBitCast((self.rawValue & ~1) | newValue.rawValue, to: Piece.self)
+        }
     }
 }
 
