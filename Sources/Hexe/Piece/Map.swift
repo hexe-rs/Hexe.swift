@@ -26,4 +26,29 @@ public final class PieceMap: Equatable {
     public init() {
         self.inner = hexe_piece_map_new()
     }
+
+    /// Retrieves the piece at the square.
+    public subscript(square: Square) -> Piece? {
+        get {
+            let ptr = pointer(in: &self.inner, to: square)
+            switch ptr.load(as: UInt8.self) {
+            case 13:
+                return nil
+            case let other:
+                return unsafeBitCast(other, to: Piece.self)
+            }
+        }
+        set {
+            let ptr = pointer(in: &self.inner, to: square).assumingMemoryBound(to: UInt8.self)
+            if let pc = newValue {
+                ptr.pointee = pc.rawValue
+            } else {
+                ptr.pointee = 13
+            }
+        }
+    }
+}
+
+private func pointer(in map: UnsafeMutableRawPointer, to sq: Square) -> UnsafeMutableRawPointer {
+    return map + Int(sq.rawValue)
 }
