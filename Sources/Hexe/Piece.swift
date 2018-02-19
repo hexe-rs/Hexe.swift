@@ -66,6 +66,11 @@ extension Piece {
             return nil
         }
     }
+
+    /// This piece's color.
+    public var color: Color {
+        return unsafeBitCast(self.rawValue & 1, to: Color.self)
+    }
 }
 
 /// A mapping of sixty-four squares to pieces.
