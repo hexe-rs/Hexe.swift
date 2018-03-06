@@ -4,6 +4,8 @@ osx_image: xcode9
 language: rust
 rust: stable
 
+cache: cargo
+
 env:
   global:
     - LC_CTYPE=en_US.UTF-8
