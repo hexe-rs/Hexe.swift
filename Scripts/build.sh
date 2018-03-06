@@ -7,11 +7,22 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
 fi
 
 if [[ "$PLATFORM_NAME" =~ .*macos.* ]]; then
-    # macOS
-    TARGETS="x86_64-apple-darwin,i686-apple-darwin"
+    TARGET_SUFFIX="darwin"
 else
-    # iOS
-    TARGETS="aarch64-apple-ios,armv7-apple-ios,armv7s-apple-ios,i386-apple-ios,x86_64-apple-ios"
+    TARGET_SUFFIX="ios"
 fi
+
+TARGETS=""
+for arch in $ARCHS; do
+    if [[ -n "$TARGETS" ]]; then
+        TARGETS+=","
+    fi
+    if [[ "$arch" == "arm64" ]]; then
+        arch="aarch64"
+    fi
+    TARGETS+="$arch-apple-$TARGET_SUFFIX"
+done
+
+echo "Compiling hexec for $ARCHS with TARGETS=$TARGETS"
 
 $CARGO lipo $config --targets $TARGETS
