@@ -11,6 +11,7 @@
 		5207BD60203A0BA800A73588 /* Bitboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207BD5E203A0BA800A73588 /* Bitboard.swift */; };
 		52312F18203A891300E8D931 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52312F17203A891300E8D931 /* Map.swift */; };
 		52312F19203A891300E8D931 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52312F17203A891300E8D931 /* Map.swift */; };
+		524A44C8204E605500E500D2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524A44C7204E605500E500D2 /* Security.framework */; };
 		525540D8203939D3007D4ABD /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Engine.swift */; };
 		525540F4203944D7007D4ABD /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Engine.swift */; };
 		525540F520394548007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540E5203940EB007D4ABD /* libhexec.a */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		5207BD5E203A0BA800A73588 /* Bitboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitboard.swift; sourceTree = "<group>"; };
 		52312F17203A891300E8D931 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		524A44C7204E605500E500D2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		525540CD20393973007D4ABD /* Hexe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hexe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525540D7203939D3007D4ABD /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		525540DA20393A39007D4ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524A44C8204E605500E500D2 /* Security.framework in Frameworks */,
 				525540F520394548007D4ABD /* libhexec.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +127,7 @@
 		525540DD20393DC6007D4ABD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				524A44C7204E605500E500D2 /* Security.framework */,
 				525540E5203940EB007D4ABD /* libhexec.a */,
 			);
 			name = Frameworks;
