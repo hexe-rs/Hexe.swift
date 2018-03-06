@@ -22,6 +22,21 @@ public struct Bitboard: RawRepresentable, Equatable, Hashable {
         return CarryRippler(self)
     }
 
+    /// Returns the number of bits set.
+    public var count: Int {
+        return self.rawValue.nonzeroBitCount
+    }
+
+    /// Returns whether `self` is empty.
+    public var isEmpty: Bool {
+        return self.rawValue == 0
+    }
+
+    /// Returns whether `self` has multiple bits set.
+    public var hasMultiple: Bool {
+        return self.rawValue & (self.rawValue &- 1) != 0
+    }
+
     /// The hash value.
     public var hashValue: Int {
         return rawValue.hashValue
