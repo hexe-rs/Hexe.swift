@@ -12,9 +12,6 @@ import simd
 typealias Simd = simd_uint4
 
 private func memEq(_ lhs: UnsafePointer<piece_map>, _ rhs: UnsafePointer<piece_map>) -> Bool {
-    if Int(bitPattern: lhs) == Int(bitPattern: rhs) {
-        return true
-    }
     let len = MemoryLayout<piece_map>.size / MemoryLayout<Simd>.size
     return lhs.withMemoryRebound(to: Simd.self, capacity: len) { a in
         rhs.withMemoryRebound(to: Simd.self, capacity: len) { b in
@@ -36,7 +33,7 @@ private func pointer(in map: UnsafeMutableRawPointer, to sq: Square) -> UnsafeMu
 public final class PieceMap: Equatable {
     /// Returns whether the piece maps are equal.
     public static func == (lhs: PieceMap, rhs: PieceMap) -> Bool {
-        return memEq(&lhs.inner, &rhs.inner)
+        return lhs === rhs || memEq(&lhs.inner, &rhs.inner)
     }
 
     private var inner: piece_map
