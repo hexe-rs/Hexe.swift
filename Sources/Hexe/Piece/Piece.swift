@@ -48,6 +48,11 @@ public enum Piece: UInt8 {
 }
 
 extension Piece {
+    /// Creates a new instance from `kind` and `color`.
+    public init(kind: PieceKind, color: Color) {
+        self = unsafeBitCast((kind.rawValue << 1) | color.rawValue, to: Piece.self)
+    }
+
     /// Creates a color from the case-insensitive scalar.
     public init?(scalar: UnicodeScalar) {
         switch scalar {
@@ -62,6 +67,16 @@ extension Piece {
         }
     }
 
+    /// The piece's kind.
+    public var kind: PieceKind {
+        get {
+            return unsafeBitCast(self.rawValue >> 1, to: PieceKind.self)
+        }
+        set {
+            self = unsafeBitCast(((self.rawValue & 1) | (newValue.rawValue << 1)), to: Piece.self)
+        }
+    }
+
     /// This piece's color.
     public var color: Color {
         get {
@@ -71,4 +86,25 @@ extension Piece {
             self = unsafeBitCast((self.rawValue & ~1) | newValue.rawValue, to: Piece.self)
         }
     }
+}
+
+/// A chess piece kind.
+public enum PieceKind: UInt8 {
+    /// Pawn kind.
+    case pawn
+
+    /// Knight kind.
+    case knight
+
+    /// Bishop kind.
+    case bishop
+
+    /// Rook kind.
+    case rook
+
+    /// Queen kind.
+    case queen
+
+    /// King kind.
+    case king
 }
