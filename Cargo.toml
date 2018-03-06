@@ -9,7 +9,7 @@ path = "Sources/hexec/lib.rs"
 crate-type = ["staticlib"]
 
 [dependencies]
-hexe = "0.0.1"
+hexe = "0.0.2"
 
 [profile.release]
 lto = true
