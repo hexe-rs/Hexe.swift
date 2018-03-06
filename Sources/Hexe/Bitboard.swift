@@ -7,7 +7,7 @@
 //
 
 /// A bitmap chess board representation.
-public struct Bitboard: RawRepresentable, Equatable, Hashable {
+public struct Bitboard: RawRepresentable, Equatable {
     /// A full bitboard.
     public static let full = Bitboard(~0)
 
@@ -37,11 +37,6 @@ public struct Bitboard: RawRepresentable, Equatable, Hashable {
         return self.rawValue & (self.rawValue &- 1) != 0
     }
 
-    /// The hash value.
-    public var hashValue: Int {
-        return rawValue.hashValue
-    }
-
     /// Creates an instance from `rawValue`.
     public init(rawValue: UInt64) {
         self.rawValue = rawValue
@@ -50,6 +45,12 @@ public struct Bitboard: RawRepresentable, Equatable, Hashable {
     /// Creates an instance from `rawValue`.
     public init(_ rawValue: UInt64) {
         self.rawValue = rawValue
+    }
+}
+
+extension Bitboard: Hashable {
+    public var hashValue: Int {
+        return rawValue.hashValue
     }
 }
 
