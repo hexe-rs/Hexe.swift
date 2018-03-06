@@ -56,6 +56,11 @@ public final class PieceMap: Equatable {
         self.inner = hexe_piece_map_new()
     }
 
+    /// Creates a copy from `other`.
+    public init(other: PieceMap) {
+        self.inner = other.inner
+    }
+
     /// Retrieves the piece at the square.
     public subscript(square: Square) -> Piece? {
         get {
