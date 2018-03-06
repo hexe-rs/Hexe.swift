@@ -6,6 +6,8 @@
     A Swift wrapper for the <a href="https://github.com/hexe-rs/Hexe">Hexe</a> chess engine
 </p>
 
+[![Travis Status][travis-badge]][travis]
+
 ## What is Hexe?
 
 Hexe is a pure [Rust] chess engine.
@@ -17,3 +19,6 @@ This is a cross-platform framework that serves to bring the majority of Hexe's f
 Because Rust and Swift don't map one-to-one, this API may diverge slightly from the Rust API.
 
 [Rust]: https://www.rust-lang.org/
+
+[travis]:       https://travis-ci.org/hexe-rs/Hexe.swift
+[travis-badge]: https://travis-ci.org/hexe-rs/Hexe.swift.svg?branch=master
