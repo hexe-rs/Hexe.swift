@@ -17,6 +17,11 @@ public struct Bitboard: RawRepresentable, Equatable, Hashable {
     /// The inner raw value.
     public var rawValue: UInt64
 
+    /// Returns an iterator over the subsets of `self`.
+    public var carryRippler: CarryRippler {
+        return CarryRippler(self)
+    }
+
     /// The hash value.
     public var hashValue: Int {
         return rawValue.hashValue
@@ -44,5 +49,40 @@ extension Bitboard: CustomStringConvertible {
         let val = String(rawValue, radix: 16, uppercase: true)
         let rem = 16.unsafeSubtracting(val.count)
         return "0x" + String(repeating: "0" as Character, count: rem) + val
+    }
+}
+
+/// An iterator over all subsets of a `Bitboard`.
+public struct CarryRippler {
+
+    private var sub: UInt64 = 0
+    private let set: UInt64
+    private var isFirst: Bool = true
+
+    /// Returns whether `self` is empty.
+    public var isEmpty: Bool {
+        return !self.isFirst && self.sub == 0
+    }
+
+    /// Creates an instance for a full bitboard.
+    public init() {
+        self.init(.full)
+    }
+
+    /// Creates an instance for the given bits.
+    public init(_ bits: Bitboard) {
+        self.set = bits.rawValue
+    }
+}
+
+extension CarryRippler: IteratorProtocol, Sequence {
+    public mutating func next() -> Optional<Bitboard> {
+        guard !self.isEmpty else {
+            return nil
+        }
+        self.isFirst = false
+        let sub = self.sub
+        self.sub = self.set & (self.sub &- self.set)
+        return Bitboard(sub)
     }
 }
