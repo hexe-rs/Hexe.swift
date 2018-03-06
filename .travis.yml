@@ -13,7 +13,6 @@ env:
     - FRAMEWORK_NAME="Hexe"
 
 install:
-  - gem install xcpretty --no-rdoc --no-ri --no-document
   - cargo install cargo-lipo
 
 script: ./Scripts/travis.sh
