@@ -8,6 +8,12 @@
 
 /// A bitmap chess board representation.
 public struct Bitboard: RawRepresentable, Equatable, Hashable {
+    /// A full bitboard.
+    public static let full = Bitboard(~0)
+
+    /// An empty bitboard.
+    public static let empty = Bitboard(0)
+
     /// The inner raw value.
     public var rawValue: UInt64
 
