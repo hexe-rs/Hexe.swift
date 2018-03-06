@@ -7,7 +7,7 @@ function build() {
         -project $FRAMEWORK_NAME.xcodeproj \
         -scheme "$FRAMEWORK_NAME $1" \
         -destination "$2" \
-        test
+        test | xcpretty
 }
 
 # ----- OS: --- Destination: ----------------------
