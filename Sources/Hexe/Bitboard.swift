@@ -7,9 +7,14 @@
 //
 
 /// A bitmap chess board representation.
-public struct Bitboard: RawRepresentable, Equatable {
+public struct Bitboard: RawRepresentable, Equatable, Hashable {
     /// The inner raw value.
     public var rawValue: UInt64
+
+    /// The hash value.
+    public var hashValue: Int {
+        return rawValue.hashValue
+    }
 
     /// Creates an instance from `rawValue`.
     public init(rawValue: UInt64) {
