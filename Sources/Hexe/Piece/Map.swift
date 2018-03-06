@@ -36,6 +36,11 @@ public final class PieceMap: Equatable {
         return lhs === rhs || memEq(&lhs.inner, &rhs.inner)
     }
 
+    /// The piece map for standard chess.
+    public static var standard: PieceMap {
+        return PieceMap(inner: hexe_piece_map_standard())
+    }
+
     private var inner: piece_map
 
     /// Creates the fen string for `self`.
@@ -49,6 +54,10 @@ public final class PieceMap: Equatable {
             }
             return s
         }
+    }
+
+    private init(inner: piece_map) {
+        self.inner = inner
     }
 
     /// Creates a new instance.

@@ -25,6 +25,8 @@ piece_map hexe_piece_map_new() {
     return map;
 }
 
+piece_map hexe_piece_map_standard();
+
 void hexe_piece_map_fen(context, piece_map* _Nonnull, StringFn _Nonnull);
 
 size_t hexe_square_distance(uint8_t s1, uint8_t s2);

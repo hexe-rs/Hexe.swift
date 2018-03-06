@@ -67,6 +67,11 @@ pub unsafe extern "C" fn hexe_engine_destroy(e: Box<Engine>) {
     drop(e);
 }
 
+#[no_mangle]
+pub extern "C" fn hexe_piece_map_standard() -> PieceMap {
+    PieceMap::STANDARD
+}
+
 type StringFn = extern "C" fn(*mut raw::c_char, *mut u8);
 
 #[no_mangle]
