@@ -6,13 +6,17 @@
 //  Copyright © 2018 Nikolai Vazquez. All rights reserved.
 //
 
+/// A bitmap chess board representation.
 public struct Bitboard: RawRepresentable, Equatable {
+    /// The inner raw value.
     public var rawValue: UInt64
 
+    /// Creates an instance from `rawValue`.
     public init(rawValue: UInt64) {
         self.rawValue = rawValue
     }
 
+    /// Creates an instance from `rawValue`.
     public init(_ rawValue: UInt64) {
         self.rawValue = rawValue
     }
