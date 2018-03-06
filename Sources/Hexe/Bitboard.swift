@@ -37,6 +37,28 @@ public struct Bitboard: RawRepresentable, Equatable {
         return self.rawValue & (self.rawValue &- 1) != 0
     }
 
+    /// Returns the least significant bit of `self`.
+    public var lsb: Optional<Square> {
+        return self.isEmpty ? nil : self.lsbUnchecked
+    }
+
+    /// Returns the most significant bit of `self`.
+    public var msb: Optional<Square> {
+        return self.isEmpty ? nil : self.msbUnchecked
+    }
+
+    /// Returns the least significant bit of `self` without checking whether `self` is empty.
+    public var lsbUnchecked: Square {
+        return unsafeBitCast(UInt8(truncatingIfNeeded: self.rawValue.trailingZeroBitCount),
+                             to: Square.self)
+    }
+
+    /// Returns the most significant bit of `self` without checking whether `self` is empty.
+    public var msbUnchecked: Square {
+        return unsafeBitCast(UInt8(truncatingIfNeeded: 63 ^ self.rawValue.leadingZeroBitCount),
+                             to: Square.self)
+    }
+
     /// Creates an instance from `rawValue`.
     public init(rawValue: UInt64) {
         self.rawValue = rawValue
