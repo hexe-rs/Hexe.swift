@@ -7,7 +7,19 @@
 //
 
 import XCTest
+import Hexe
 
 class HexeTests: XCTestCase {
+
+    func testPieceMapIsEmpty() {
+        let empty = PieceMap()
+        XCTAssertTrue(empty.isEmpty)
+
+        let standard = PieceMap.standard
+        XCTAssertFalse(standard.isEmpty)
+
+        empty[.h8] = .whiteRook
+        XCTAssertFalse(empty.isEmpty)
+    }
 
 }
