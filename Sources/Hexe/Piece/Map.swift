@@ -9,20 +9,27 @@
 import hexec
 import simd
 
-typealias Simd = simd_uint4
+private typealias Simd = simd_uint4
+
+private let simdCount: Int = MemoryLayout<piece_map>.size / MemoryLayout<Simd>.size
+private let noPiece: UInt8 = 12
+
+private let lo32: UInt32 = 0x1010101
+private let hi32: UInt32 = lo32 << 7
 
 private func memEq(_ lhs: UnsafePointer<piece_map>, _ rhs: UnsafePointer<piece_map>) -> Bool {
-    let len = MemoryLayout<piece_map>.size / MemoryLayout<Simd>.size
-    return lhs.withMemoryRebound(to: Simd.self, capacity: len) { a in
-        rhs.withMemoryRebound(to: Simd.self, capacity: len) { b in
-            for i in 0 ..< len {
-                if a[i] != b[i] {
-                    return false
-                }
-            }
-            return true
+    let a = simdPointer(to: lhs)
+    let b = simdPointer(to: rhs)
+    for i in 0 ..< simdCount {
+        if a[i] != b[i] {
+            return false
         }
     }
+    return true
+}
+
+private func simdPointer(to map: UnsafePointer<piece_map>) -> UnsafePointer<Simd> {
+    return map.withMemoryRebound(to: Simd.self, capacity: simdCount, { $0 })
 }
 
 private func pointer(in map: UnsafeMutableRawPointer, to sq: Square) -> UnsafeMutableRawPointer {
@@ -54,6 +61,18 @@ public final class PieceMap: Equatable {
             }
             return s
         }
+    }
+
+    /// Returns a boolean indicating whether the map is empty.
+    public var isEmpty: Bool {
+        let empty = Simd(lo32 * UInt32(noPiece))
+        let inner = simdPointer(to: &self.inner)
+        for i in 0 ..< simdCount {
+            if inner[i] != empty {
+                return false
+            }
+        }
+        return true
     }
 
     private init(inner: piece_map) {
