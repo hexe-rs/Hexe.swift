@@ -13,6 +13,6 @@ env:
     - FRAMEWORK_NAME="Hexe"
 
 install:
-  - cargo install cargo-lipo
+  - cargo install --force cargo-lipo
 
 script: ./Scripts/travis.sh
