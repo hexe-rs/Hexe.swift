@@ -2,6 +2,8 @@
 
 set -e -o pipefail
 
+FRAMEWORK_NAME=$(ls | grep ".xcodeproj" | sed "s/.xcodeproj//g")
+
 function build() {
     xcodebuild \
         -project $FRAMEWORK_NAME.xcodeproj \
