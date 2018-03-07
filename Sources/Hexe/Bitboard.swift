@@ -69,6 +69,11 @@ public struct Bitboard: RawRepresentable, Equatable {
         self.rawValue = rawValue
     }
 
+    /// Creates an instance with the bit for `square` set.
+    public init(square: Square) {
+        self.rawValue = 1 &<< square.rawValue
+    }
+
     /// Removes the least significant bit from `self`.
     public mutating func removeLsb() {
         self.rawValue &= self.rawValue &- 1
