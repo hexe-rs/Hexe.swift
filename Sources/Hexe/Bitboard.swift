@@ -38,12 +38,12 @@ public struct Bitboard: RawRepresentable, Equatable {
     }
 
     /// Returns the least significant bit of `self`.
-    public var lsb: Optional<Square> {
+    public var lsb: Square? {
         return self.isEmpty ? nil : self.lsbUnchecked
     }
 
     /// Returns the most significant bit of `self`.
-    public var msb: Optional<Square> {
+    public var msb: Square? {
         return self.isEmpty ? nil : self.msbUnchecked
     }
 
@@ -67,6 +67,30 @@ public struct Bitboard: RawRepresentable, Equatable {
     /// Creates an instance from `rawValue`.
     public init(_ rawValue: UInt64) {
         self.rawValue = rawValue
+    }
+
+    /// Removes the least significant bit from `self`.
+    public mutating func removeLsb() {
+        self.rawValue &= self.rawValue &- 1
+    }
+
+    /// Removes the most significant bit from `self`.
+    public mutating func removeMsb() {
+        let _ = self.popMsb()
+    }
+
+    /// Removes the least significant bit from `self` and returns it.
+    public mutating func popLsb() -> Square? {
+        guard let x = self.lsb else { return nil }
+        self.removeLsb()
+        return x
+    }
+
+    /// Removes the most significant bit from `self` and returns it.
+    public mutating func popMsb() -> Square? {
+        guard let x = self.msb else { return nil }
+        self.rawValue &= UInt64(x.rawValue)
+        return x
     }
 }
 
