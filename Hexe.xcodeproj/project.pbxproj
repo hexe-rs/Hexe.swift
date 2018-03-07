@@ -16,6 +16,8 @@
 		524A44E3204E65B000E500D2 /* Hexe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540EC2039446E007D4ABD /* Hexe.framework */; };
 		524A44EC204E660C00E500D2 /* HexeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A44EB204E660C00E500D2 /* HexeTests.swift */; };
 		524A44ED204E660C00E500D2 /* HexeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A44EB204E660C00E500D2 /* HexeTests.swift */; };
+		524A44F2204F6CC900E500D2 /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A44F1204F6CC900E500D2 /* All.swift */; };
+		524A44F3204F6CC900E500D2 /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A44F1204F6CC900E500D2 /* All.swift */; };
 		525540D8203939D3007D4ABD /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Engine.swift */; };
 		525540F4203944D7007D4ABD /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525540D7203939D3007D4ABD /* Engine.swift */; };
 		525540F520394548007D4ABD /* libhexec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525540E5203940EB007D4ABD /* libhexec.a */; };
@@ -53,6 +55,7 @@
 		524A44DE204E65B000E500D2 /* HexeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HexeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		524A44EA204E65FD00E500D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524A44EB204E660C00E500D2 /* HexeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexeTests.swift; sourceTree = "<group>"; };
+		524A44F1204F6CC900E500D2 /* All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All.swift; sourceTree = "<group>"; };
 		525540CD20393973007D4ABD /* Hexe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hexe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525540D7203939D3007D4ABD /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		525540DA20393A39007D4ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 		525540DB20393AAE007D4ABD /* Hexe */ = {
 			isa = PBXGroup;
 			children = (
+				524A44F1204F6CC900E500D2 /* All.swift */,
 				525540D7203939D3007D4ABD /* Engine.swift */,
 				525540FB203964A7007D4ABD /* Square.swift */,
 				5255410D2039FBB2007D4ABD /* Color.swift */,
@@ -436,6 +440,7 @@
 				525540FC203964A7007D4ABD /* Square.swift in Sources */,
 				525540D8203939D3007D4ABD /* Engine.swift in Sources */,
 				52FB3035203A1FC200ACF7A4 /* Piece.swift in Sources */,
+				524A44F2204F6CC900E500D2 /* All.swift in Sources */,
 				52312F18203A891300E8D931 /* Map.swift in Sources */,
 				5255410E2039FBB2007D4ABD /* Color.swift in Sources */,
 			);
@@ -449,6 +454,7 @@
 				525540FD203964A7007D4ABD /* Square.swift in Sources */,
 				525540F4203944D7007D4ABD /* Engine.swift in Sources */,
 				52FB3036203A1FC200ACF7A4 /* Piece.swift in Sources */,
+				524A44F3204F6CC900E500D2 /* All.swift in Sources */,
 				52312F19203A891300E8D931 /* Map.swift in Sources */,
 				5255410F2039FBB2007D4ABD /* Color.swift in Sources */,
 			);

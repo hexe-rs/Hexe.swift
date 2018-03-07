@@ -23,8 +23,7 @@ class HexeTests: XCTestCase {
         XCTAssertEqual(Bitboard.empty.count, 0)
         XCTAssertEqual(Bitboard(0b10).count, 1)
 
-        for x in 0 ... Square.h8.rawValue {
-            let s = unsafeBitCast(x, to: Square.self)
+        for s in Square.all {
             let b = Bitboard(square: s)
             let lsb = b.lsb, msb = b.msb
             XCTAssertEqual(lsb, s)
