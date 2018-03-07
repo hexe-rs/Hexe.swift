@@ -33,6 +33,27 @@ class HexeTests: XCTestCase {
         }
     }
 
+    func testAllIterator() {
+        func test<T: AllIterable>(type: T.Type, count: Int)
+            where T: RawRepresentable,
+                  T.RawValue == UInt8
+        {
+            let iter = type.all
+            XCTAssertEqual(iter.underestimatedCount, count)
+            var i = 0
+            for x in iter {
+                XCTAssertEqual(i, Int(x.rawValue))
+                i += 1
+            }
+            XCTAssertEqual(i, count)
+        }
+        test(type: Square.self,      count: 64)
+        test(type: Color.self,       count:  2)
+        test(type: Piece.self,       count: 12)
+        test(type: PieceKind.self,   count:  6)
+        test(type: CastleRight.self, count:  4)
+    }
+
     func testPieceMapIsEmpty() {
         let empty = PieceMap()
         XCTAssertTrue(empty.isEmpty)
