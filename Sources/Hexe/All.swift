@@ -57,3 +57,9 @@ extension Piece: AllIterable {
 
     public static let all = All<Piece>(_count)
 }
+
+extension CastleRight: AllIterable {
+    internal static let _count: UInt8 = 4
+
+    public static let all = All<CastleRight>(_count)
+}
