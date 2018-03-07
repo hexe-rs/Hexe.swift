@@ -15,7 +15,7 @@ public protocol AllIterable {
 /// An iterator over all instances of `T`.
 public struct All<T: AllIterable>: IteratorProtocol, Sequence {
 
-    private var iter: IndexingIterator<CountableRange<UInt8>>
+    private var iter: CountableRange<UInt8>.Iterator
 
     public var underestimatedCount: Int {
         return self.iter.underestimatedCount
