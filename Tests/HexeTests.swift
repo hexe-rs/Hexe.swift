@@ -22,6 +22,16 @@ class HexeTests: XCTestCase {
         XCTAssertEqual(Bitboard.full.count, 64)
         XCTAssertEqual(Bitboard.empty.count, 0)
         XCTAssertEqual(Bitboard(0b10).count, 1)
+
+        for x in 0 ... Square.h8.rawValue {
+            let s = unsafeBitCast(x, to: Square.self)
+            let b = Bitboard(square: s)
+            let lsb = b.lsb, msb = b.msb
+            XCTAssertEqual(lsb, s)
+            XCTAssertEqual(msb, s)
+            XCTAssertEqual(lsb, b.lsbUnchecked)
+            XCTAssertEqual(msb, b.msbUnchecked)
+        }
     }
 
     func testPieceMapIsEmpty() {
