@@ -15,20 +15,24 @@ public protocol AllIterable {
 /// An iterator over all instances of `T`.
 public struct All<T: AllIterable>: IteratorProtocol, Sequence {
 
-    private var iter: CountableRange<UInt8>.Iterator
+    private var current: UInt8 = 0
+
+    private let total: UInt8
 
     public var underestimatedCount: Int {
-        return self.iter.underestimatedCount
+        return Range(uncheckedBounds: (current, total)).count
     }
 
     fileprivate init(_ total: UInt8) {
-        self.iter = (0 ..< total).makeIterator()
+        self.total = total
     }
 
     public mutating func next() -> T? {
-        guard let next = self.iter.next() else {
+        guard self.current < self.total else {
             return nil
         }
+        let next = self.current
+        self.current = next &+ 1
         return unsafeBitCast(next, to: T.self)
     }
 
